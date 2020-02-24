@@ -46,8 +46,10 @@ public class MainController {
 			@RequestParam(value = "lat", required = false) double lat,
 			@RequestParam(value = "longgi", required = false) double longi) {
 
+this.service.setlat(lat);
+this.service.setlongi(longi);
 
-		this.service.setdata(lat, longi);
+		this.service.setdata();
 
 		DeferredResult<ResponseEntity<WeatherAppdeatils>> response = new DeferredResult<ResponseEntity<WeatherAppdeatils>>();
 		ForkJoinPool.commonPool().submit(() -> {
