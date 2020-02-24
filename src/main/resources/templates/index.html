@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script rel="javascript" type="text/javascript"
+	href="js/jquery-1.11.3.min.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+	type="text/javascript"></script>
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<form id="formoo" th:action="@{/reset}" method="get">
+		<input id="lat" type="number" th:name="lat" value="0.0" /> <input
+			id="longgi" type="number" th:name="longgi" value="0.0" />
+
+
+
+		<button type="button">Reset</button>
+	</form>
+
+
+
+
+
+
+	<form class="form11" th:action="@{/address}" method="get">
+
+		<input type="text" id="add" th:name="add" />
+
+
+		<button type="submit" class="button" name="action" value="Reject">Get
+			weather forecast by address</button>
+
+	</form>
+
+
+	<p id="demo"></p>
+
+	<script type="text/javascript">
+		var x = document.getElementById("demo");
+		var lat, longi = 0;
+		var latdocument,longidocument=0;
+
+		function showPosition(position) {
+			lat = position.coords.latitude;
+			longi = position.coords.longitude
+		
+		}
+
+		$(document)
+				.ready(
+						function() {
+							$("button")
+									.click(
+											function() {
+												if (navigator.geolocation) {
+													navigator.geolocation
+															.getCurrentPosition(showPosition);
+												} else {
+													x.innerHTML = "Geolocation is not supported by this browser.";
+												}
+												console.log(lat);
+
+												// console.log(position.coords.longitude);
+
+												if (lat != null
+														&& longi != null) {
+
+												
+													
+													
+											//latdocument= document.getElementById('lat').value;
+											//longidocument=document.getElementById('longgi').value;
+											
+											latdocument=lat;
+											
+											longidocument=longi;
+											console.log(latdocument);
+
+											console.log(longidocument);
+											
+											
+											
+											$("#lat").val(lat);
+											$("#longgi").val(longi);
+
+
+											alert(latdocument);
+											alert(longidocument);
+										
+											console.log("start");
+											$("#formoo").submit();
+												//	alert($("#formoo").submit());
+													console.log("end");
+
+												}
+
+											});
+
+						});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+
+</body>
+</html>

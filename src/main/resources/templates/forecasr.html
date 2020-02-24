@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script rel="javascript" type="text/javascript"
+	href="js/jquery-1.11.3.min.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+	type="text/javascript"></script>
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+	
+
+
+				<form class="form11" th:action="@{/address}" method="get" >
+
+							<input type="text" class="form-control" id="add" th:name="add"  />
+
+
+								<button type="submit" class="button" name="action"
+									value="Reject">Get weather forecast by address</button>
+
+							</form>
+
+
+	<p id="demo"></p>
+
+	<script type="text/javascript">
+	
+
+		/* $(document)
+				.ready(
+						function() {
+							$("button")
+									.click(
+											function() {
+												
+												
+												  var x= document.getElementById("muINput").value
+
+												
+												console.log(x);
+													
+												
+													var address = {};
+													address["text"] = x;
+													
+													
+													  
+													  $.ajax({
+														    type : "POST",
+														    url : "/",
+														    	   dataType: "json",
+														            data: JSON.stringify(address),
+														    success : function(address) {
+														        console.log("SUCCESS: ", address);
+														  
+														        
+														        
+														        $('#demo').append(JSON.stringify(address));
+
+														        
+														    },
+														    error : function(e) {
+														        console.log("ERROR: ", e);
+														    },
+														    done : function(e) {
+														        console.log("DONE");
+														        
+														    }
+														}); 
+														
+														
+													$("#formqq").submit();
+
+												}
+
+											});
+
+						});
+		
+		
+		 */
+		
+		
+		
+		
+		
+		
+		
+	</script>
+
+</body>
+</html>
